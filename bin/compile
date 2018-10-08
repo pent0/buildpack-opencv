@@ -70,8 +70,7 @@ mkdir -p $CACHE_DIR
 title "Generating build environment"
 if [ ! -f $CACHE_DIR/env.tar.gz ]; then
 	subtitle "Fetching..."
-	query=`curl -c ./cookie.txt -s -L "https://drive.google.com/uc?export=download&id=1HTAyVj_O9Dq_M88zUlcCOzIZkjdDGp0s" | pup 'a#uc-download-link attr{href}' | sed -e 's/amp;//g'`
-	wget -nv https://drive.google.com${query} -O $CACHE_DIR/opencv.env.tgz
+	wget -nv https://onedrive.live.com/download?cid=77DA8D3F87DE5E3B&resid=77DA8D3F87DE5E3B%212118&authkey=AJL-IOfWFp3mCWA -O $CACHE_DIR/opencv.env.tgz
 fi
 subtitle "Unpacking..."
 tar zxf $CACHE_DIR/opencv.env.tgz -C $BUILD_DIR
